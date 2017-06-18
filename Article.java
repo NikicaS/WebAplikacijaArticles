@@ -20,7 +20,7 @@ public class Article {
     public int author;
     public boolean active;
     
-    public Article(int id, String title, String image, String text, String rDate, int author/*, boolean active*/){
+    public Article(int id, String title, String image, String text, String rDate, int author){
         
         this.id = id;
         this.title = title;
@@ -28,17 +28,16 @@ public class Article {
         this.text = text;
         this.rDate = rDate;
         this.author = author;
-       // this.active = active;
     }
     
-    public Article(String title, String image, String text, String rDate, int author/*, boolean active*/){
+    public Article(String title, String image, String text, String rDate, int author){
        
         this.title = title;
         this.image = image;
         this.text = text;
         this.rDate = rDate;
         this.author = author;
-        //this.active = active;
+ 
     }
     
     public void insert(){
@@ -58,8 +57,7 @@ public class Article {
         return new Article(Integer.parseInt(qRes.get(0)[0]),
                             qRes.get(0)[1],qRes.get(0)[2],
                             qRes.get(0)[3], qRes.get(0)[4],
-                            Integer.parseInt(qRes.get(0)[5])
-                            /*Boolean.parseBoolean(qRes.get(0)[6])*/);
+                            Integer.parseInt(qRes.get(0)[5]));
         
     }
     
@@ -74,8 +72,7 @@ public class Article {
         for(String[]s : qRes)
             res.add(new Article(Integer.parseInt(s[0]),
                                 s[1], s[2], s[3], s[4],
-                                Integer.parseInt(s[5]))
-                                /*(s[6].equals("1"))?true:false )*/);
+                                Integer.parseInt(s[5]));
             return res;
         
                 
